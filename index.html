@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="color-scheme" content="light" />
-    <title>中国收件人地址及拼音确认模块</title>
+    <title>中国收件人地址及拼音确认</title>
     <script type="module" crossorigin src="./assets/index-CQk2Nbml.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-DrFR_BGO.css">
   </head>
@@ -14,7 +14,7 @@
         <div>
           <p class="eyebrow">INTERNATIONAL SHIPPING</p>
           <h1 id="widget-title">中国收件人地址及拼音确认模块</h1>
-          <p class="intro">请先填写中文资料，再生成并逐项检查运输商 CSV 字段。</p>
+          <p class="intro">请先填写中文资料，再转换为拼音。</p>
         </div>
         <span class="connection-badge" id="connection-badge">本地预览</span>
       </header>
@@ -30,32 +30,32 @@
           <span class="step-number" aria-hidden="true">1</span>
           <div>
             <h2 id="cn-section-title">中文收件人资料</h2>
-            <p>姓名、电话和地址只在浏览器内处理，不会发送给翻译或地图服务。</p>
           </div>
         </div>
 
         <div class="form-grid form-grid--three">
           <div class="field">
-            <label for="recipient_surname_cn">收件人姓 <span aria-hidden="true">*</span></label>
+            <label for="recipient_surname_cn">回国人员收件人姓 <span aria-hidden="true">*</span></label>
             <input id="recipient_surname_cn" name="recipient_surname_cn" autocomplete="family-name" maxlength="40" aria-required="true" />
+            <p class="hint">请填写回国人员的姓名。</p>
             <p class="field-error" id="error-recipient_surname_cn" data-error-for="recipient_surname_cn"></p>
           </div>
           <div class="field">
-            <label for="recipient_given_name_cn">收件人名 <span aria-hidden="true">*</span></label>
+            <label for="recipient_given_name_cn">回国人员收件人名 <span aria-hidden="true">*</span></label>
             <input id="recipient_given_name_cn" name="recipient_given_name_cn" autocomplete="given-name" maxlength="40" aria-required="true" />
             <p class="field-error" id="error-recipient_given_name_cn" data-error-for="recipient_given_name_cn"></p>
           </div>
           <div class="field">
             <label for="recipient_mobile">联系电话 <span aria-hidden="true">*</span></label>
-            <input id="recipient_mobile" name="recipient_mobile" type="text" inputmode="numeric" autocomplete="tel" maxlength="13" placeholder="13111111111" aria-required="true" />
-            <p class="hint">可填写11位手机号；已带86前缀时不会重复添加。</p>
+            <input id="recipient_mobile" name="recipient_mobile" type="text" inputmode="numeric" autocomplete="tel" maxlength="11" placeholder="13111111111" aria-required="true" />
+            <p class="hint">填写11位中国手机号；请确保手机号码可接受海关短信，可以填写亲友的手机号码。</p>
             <p class="field-error" id="error-recipient_mobile" data-error-for="recipient_mobile"></p>
           </div>
         </div>
 
         <label class="check-row manual-toggle" for="manual_address_override">
           <input id="manual_address_override" name="manual_address_override" type="checkbox" />
-          <span>地址不在列表中</span>
+          <span>下方内容，如需手动填写内容，请勾选</span>
         </label>
 
         <div id="division-selectors">
@@ -124,23 +124,23 @@
       <section class="convert-panel" aria-labelledby="convert-title">
         <span class="step-number" aria-hidden="true">2</span>
         <div>
-          <h2 id="convert-title">生成运输商 CSV 字段</h2>
-          <p>姓名和地址会在浏览器本地转为无声调拼音；多音姓名可能需要人工修正。</p>
+          <h2 id="convert-title">转换为拼音-国际运输标签</h2>
+          <p>请用英文或拼音填写以下地址信息，确保跟上面中文地址相对应。请注意自动转换功能可能出现不准确或字数超出的情况。</p>
+          <p>请自行修改并请确认无误后再提交。</p>
         </div>
-        <button id="convert-button" type="button">生成运输商 CSV 字段</button>
+        <button id="convert-button" type="button">自动转化为拼音</button>
       </section>
-      <div class="notice notice--info" id="conversion-status" role="status" aria-live="polite">填写中文资料后点击“生成运输商 CSV 字段”，再逐项检查结果。</div>
+      <div class="notice notice--info" id="conversion-status" role="status" aria-live="polite">填写中文资料后点击“自动转化为拼音”，再逐项检查结果。</div>
 
       <section class="panel output-panel" id="output-panel" aria-labelledby="output-section-title">
         <div class="section-heading">
           <span class="step-number" aria-hidden="true">3</span>
           <div>
-            <h2 id="output-section-title">运输商 CSV 资料确认区</h2>
+            <h2 id="output-section-title">中国收件人信息国际运输标签信息</h2>
             <p>除 Mobile 外均可修改；Mobile 只能通过上方联系电话重新生成。</p>
           </div>
         </div>
 
-        <h3>运输商 CSV 对应字段</h3>
         <div class="form-grid form-grid--two csv-grid">
           <div class="field">
             <label for="csv_first_name">First Name <span aria-hidden="true">*</span></label>
