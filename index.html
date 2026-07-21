@@ -123,10 +123,11 @@
       <section class="convert-panel" aria-labelledby="convert-title">
         <span class="step-number" aria-hidden="true">2</span>
         <div>
-          <h2 id="convert-title">生成运输商 CSV 字段</h2>
-          <p>姓名和地址会在浏览器本地转为无声调拼音；多音姓名可能需要人工修正。</p>
+          <h2 id="convert-title">转换为拼音-国际运输标签</h2>
+          <p>请用英文或拼音填写以下地址信息，确保跟上面中文地址相对应。请注意自动转换功能可能出现不准确或字数超出的情况。</p>
+          <p>请自行修改并请确认无误后再提交。</p>
         </div>
-        <button id="convert-button" type="button">生成运输商 CSV 字段</button>
+        <button id="convert-button" type="button">自动转化为拼音</button>
       </section>
       <div class="notice notice--info" id="conversion-status" role="status" aria-live="polite">填写中文资料后点击“生成运输商 CSV 字段”，再逐项检查结果。</div>
 
@@ -134,12 +135,11 @@
         <div class="section-heading">
           <span class="step-number" aria-hidden="true">3</span>
           <div>
-            <h2 id="output-section-title">运输商 CSV 资料确认区</h2>
+            <h2 id="output-section-title">中国收件人信息国际运输标签信息</h2>
             <p>除 Mobile 外均可修改；Mobile 只能通过上方联系电话重新生成。</p>
           </div>
         </div>
 
-        <h3>运输商 CSV 对应字段</h3>
         <div class="form-grid form-grid--two csv-grid">
           <div class="field">
             <label for="csv_first_name">First Name <span aria-hidden="true">*</span></label>
